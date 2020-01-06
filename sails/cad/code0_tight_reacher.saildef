@@ -12,12 +12,12 @@
   <real value="322" name="rake"/>
   <real value="90" name="gaffDeg"/>
   <real value="5" name="gaffL"/>
-  <real value="10600" name="footL"/>
+  <real value="6600" name="footL"/>
   <real value="15847" name="leechL"/>
   <real value="67" name="luffR"/>
   <real value="0" name="gaffR"/>
   <real value="1000" name="leechR"/>
-  <real value="200" name="footR"/>
+  <real value="500" name="footR"/>
   <int value="50" name="luffRP"/>
   <int value="50" name="gaffRP"/>
   <int value="55" name="leechRP"/>
@@ -29,22 +29,22 @@
   <real value="18" name="twistDeg"/>
   <real value="5" name="sheetDeg"/>
   <CSailMould name="mould">
-   <int value="35" name="vertpos"/>
+   <int value="42" name="vertpos"/>
    <vector name="profile" size="3">
     <CProfile name="0">
-     <real value="0.02" name="depth"/>
-     <real value="0" name="kleech"/>
+     <real value="0.11" name="depth"/>
+     <real value="0.16" name="kleech"/>
      <real value="1" name="kluff"/>
     </CProfile>
     <CProfile name="1">
-     <real value="0.08" name="depth"/>
-     <real value="0.04" name="kleech"/>
-     <real value="3" name="kluff"/>
+     <real value="0.21" name="depth"/>
+     <real value="0.02" name="kleech"/>
+     <real value="1" name="kluff"/>
     </CProfile>
     <CProfile name="2">
-     <real value="0.06" name="depth"/>
+     <real value="0.02" name="depth"/>
      <real value="0.04" name="kleech"/>
-     <real value="5" name="kluff"/>
+     <real value="2" name="kluff"/>
     </CProfile>
    </vector>
   </CSailMould>
