@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=e56a2a1c -->
+<title>Peak Current Limit Decrement Timer</title>
+</head>
+<body class="doc">
+<h1>Peak Current Limit Decrement Timer</h1>
+<h2>Units: [100ms]</h2>
+
+<p>The BMS keeps track of how much the current limit(s) have been exceeded recently. Once the limits are no longer being exceeded (ie: both the discharge and charge current limits are being properly respected), the BMS will gradually lower these counters to 0. <br />
+<br />
+This parameter represents the amount of time (in 100ms increments) that it takes for the peak current counter to return to 0. For most applications, this value can be the same as the <a href="param_peak_current_limit_timer.html">Peak Current Limit Increment Timer</a>.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_peak_current_limit_timer.html">Peak Current Limit Increment Timer</a></td><td valign="center" align="right"><a href="param_peak_current_limit_percentage.html">Peak Allowable Limit Percentage</a> &gt;</table>
+</body>
+</html>

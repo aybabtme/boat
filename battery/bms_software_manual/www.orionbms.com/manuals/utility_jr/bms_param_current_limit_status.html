@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=aebe2f54 -->
+<title>Current Limit Status</title>
+</head>
+<body class="doc">
+<h1>Current Limit Status</h1>
+<h2>Default Units: Flags</h2>
+<h3>Default Length (Bytes): 2</h3>
+
+<p>This value is provided so the reasons for why a current limit (either <a href="acc_ccl.html">Charge Current Limit</a> or <a href="acc_dcl.html">Discharge Current Limit</a> are being reduced by the BMS from the maximum allowable current. <br />
+<br />
+These reasons include:
+<ul><li>
+<p>DCL Reduced Due To Low SOC (Bit #0)</p>
+</li><li>
+<p>DCL Reduced Due To High Cell Resistance (Bit #1)</p>
+</li><li>
+<p>DCL Reduced Due To Temperature (Bit #2)</p>
+</li><li>
+<p>DCL Reduced Due To Low Cell Voltage (Bit #3)</p>
+</li><li>
+<p>DCL Reduced Due To Low Pack Voltage (Bit #4)</p>
+</li><li>
+<p>DCL and CCL Reduced Due To Voltage Failsafe (Bit #6)</p>
+</li><li>
+<p>DCL and CCL Reduced Due To Communication Failsafe (Bit #7): This only applies if there are multiple BMS units connected together in series over CANBUS.</p>
+</li><li>
+<p>CCL Reduced Due To High SOC (Bit #9)</p>
+</li><li>
+<p>CCL Reduced Due To High Cell Resistance (Bit #10)</p>
+</li><li>
+<p>CCL Reduced Due To Temperature (Bit #11)</p>
+</li><li>
+<p>CCL Reduced Due To High Cell Voltage (Bit #12)</p>
+</li><li>
+<p>CCL Reduced Due To High Pack Voltage (Bit #13)</p>
+</li><li>
+<p>CCL Reduced Due To Charger Latch (Bit #14): This means the CCL is likely 0A because the charger has been turned off. This latch is removed when the Charge Power signal is removed and re-applied (ie: unplugging the car and plugging it back in).</p>
+</li><li>
+<p>CCL Reduced Due To Alternate Current Limit [MPI] (Bit #15) <br />
+<br />
+<b>Note:</b> Having one or more of these limiting reasons active is common and does not indicate that there is a problem with the battery pack or BMS.</p>
+</li></ul>
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="bms_param_total_pack_cycles.html">Total Pack Cycles</a></td><td valign="center" align="right"><a href="bms_param_high_temperature.html">High Temperature</a> &gt;</table>
+</body>
+</html>

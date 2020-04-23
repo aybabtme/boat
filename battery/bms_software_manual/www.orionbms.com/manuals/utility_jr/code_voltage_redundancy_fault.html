@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=151b0295 -->
+<title>Voltage Redundancy Fault (P0A03)</title>
+</head>
+<body class="doc">
+<h1>Voltage Redundancy Fault (P0A03)</h1>
+
+<p>This error code indicates that the voltage measured by the total pack voltage sensor did not match the sum of the individual cell voltage measurements.  This error is triggered when the difference in voltage between the two measurements exceeds the ?Pack Voltage Mismatch Threshold? setting in the BMS profile (under Pack Settings.)   <br />
+<br />
+If this error is triggered, the BMS will assume that it cannot accurately measure the voltage of the battery pack and will go into a voltage failsafe mode.  The voltage failsafe mode is the most critical condition and the <i><b>BMS will not allow charge or discharge when this error is present.</b></i>   <br />
+<br />
+This fault code may be the result of a wiring error on the cell taps (look for ?Open wire faults?), a wiring error on the total pack voltage sensor, a cell population setting error, or an internal BMS error. <br />
+<br />
+</p>
+<h3>Resolving this error code:</h3>
+
+<p><b>Important Note:</b> If a wiring fault (or open cell fault) is also present, resolve the wiring fault error first as that error code will often also trigger this error code. <br />
+<br />
+<b>Step 1)</b> Check to insure the the total pack voltage sensor is properly connected to the Orion BMS and that the full pack voltage is present at the connector. <br />
+<br />
+<b>Step 2)</b> Check to insure that all cell tap connectors are properly connected to the BMS and that they are plugged into the correct connectors (i.e. ensure cell voltage tap connector 1 is plugged into connector 1.)   <br />
+<br />
+<b>Step 3)</b> If the BMS unit was powered before all of the cell tap voltage connectors were connected or before the total pack voltage sensor connector was connected, this error code may simply be caused by the BMS not seeing voltages when it was first powered up.  If this was the case, attempt to clear this error code and monitor to see if the error code comes back.  To clear codes on Revision A - C units, either remove all power from the unit for &gt;30 seconds or use the utility to clear the codes.  For Revision D and newer units, the best approach is to use the utility to clear the error code.  If the Revision D or newer unit is setup not to store error codes over power failures, power all power can be removed from the unit for &gt;45 seconds to clear the error codes.  Clearing error codes will delete freeze frame data that may be useful for diagnostics.  If other errors are present, review the freezeframe data before clearing. <br />
+<br />
+<b>Step 4)</b> Check the cell population settings in the profile to ensure that the correct number and position of cells are ?populated.? The Orion BMS relies on the user to provide the number of cells and cell positions that it should monitor.  If these settings are wrong, the BMS will not properly add up the cell voltages and will likely cause this error.  <br />
+<br />
+  <b>Step 5)</b> Using the BMS utility, download the freeze frame data for this error code by clicking on the error code (See the software manual for more information on downloading the freeze frame data.)  The text will show the total pack voltage and individual cell voltages at the time when this error was triggered.  Review the data for clues about why the voltages are mismatched. <br />
+<br />
+<b>Step 6)</b> Using the BMS utility, verify the pack voltage is correctly displayed under ?Live Text Data?. If the total pack voltage is displayed incorrectly, check wiring and measure the voltage at the connector. If the total pack voltage is correct, next view cell voltages under ?Live Cell Data?. Ensure that cell voltages are showing up properly. If cell voltages are incorrectly displayed, see the ?Cell voltages appear incorrect? section of the troubleshooting guide to correct this problem. <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_weak_pack_fault.html">Weak Pack Fault (P0A02)</a></td><td valign="center" align="right"><a href="code_thermistor_fault.html">Thermistor Fault (P0A9C)</a> &gt;</table>
+</body>
+</html>

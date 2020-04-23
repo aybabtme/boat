@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=22d54c03 -->
+<title>Charger Safety Relay Fault (P0A08)</title>
+</head>
+<body class="doc">
+<h1>Charger Safety Relay Fault (P0A08)</h1>
+
+<p>The limit enforcement faults are caused when charge or discharge current (respectively) either exceeds the limit set by the BMS or continues after the digital on/off outputs are turned off.  For example, if the BMS has set a discharge current limit (DCL) of 50 amps and the BMS measures 100 amps for an amount of time exceeding the limit in the profile, it will set the discharge limit enforcement fault since more current is being drawn than is allowed. The same fault will get set if the BMS turns off the discharge enable output and any current is discharged after the set amount of time passes. Charge limit enforcement corresponds to charge current, discharge limit enforcement corresponds to discharge current.   <br />
+<br />
+This error can be falsely triggered if the current sensor polarity is backwards. <br />
+<br />
+When this error is triggered, the BMS is put into a failsafe mode and all 3 charge / discharge / charger enable outputs are turned off in the event the outputs are wired backwards.  The failsafe condition will reset when power is cycled.   <br />
+</p>
+<h3>Resolving the issue:</h3>
+
+<p><b>Step 1)</b> Immediately ensure that the pack is not being over-discharged or over-charged. The BMS is indicating that it does not appear to have control over charge and discharge which can lead to dangerous conditions.   <br />
+<br />
+<b>Step 2)</b> Using the Orion BMS utility download the freeze frame data and review for conditions that triggered the error. Compare the charge / discharge limit with the actual measured current at the time the fault occurred and attempt to locate the cause.   <br />
+<br />
+<b>Step 3)</b> Ensure the correct orientation of the current sensor. Current going into the battery pack should read negative and current leaving the battery pack should show up as positive. If the current sensor is backwards, it charge current will register as discharge current.  Inspect the freeze frame data and if voltage on cells are being pulled up while the pack amperage shows a positive value, it indicates the current sensor is backwards.  Likewise if cell voltages are being pulled down and the current is negative, the current sensor is backwards. <br />
+<br />
+   <b>Step 4)</b> If the cause can not be easily located, ensure that the BMS is able to effectively control all sources of charge and discharge. To do this, it may be useful to temporarily and artificially lower current limits by lowering the maximum charge and discharge limits in the profile for testing purposes only and ensure that all attached equipment respects the limits. On/off open drain outputs (also called relay outputs) can be turned off by causing a voltage failsafe condition by temporarily disconnecting the total pack voltage sensor or cell voltage tap connector.   <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_discharge_control_fault.html">Discharge Limit Enforcement Fault (P0A07)</a></td><td valign="center" align="right"><a href="code_internal_memory_fault.html">Internal Memory Fault (P0A09)</a> &gt;</table>
+</body>
+</html>

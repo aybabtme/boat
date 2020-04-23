@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=96dff5f4 -->
+<title>Voltage Derate Limit to Zero Timer</title>
+</head>
+<body class="doc">
+<h1>Voltage Derate Limit to Zero Timer</h1>
+<h2>Units: [100ms]</h2>
+
+<p>This parameter is the number of 100ms intervals that must pass (when the voltage limit is exceeded) before the associated battery current limit is cut by 10% of the maximum limit. The timer allows the option of having brief pulses above the maximum cell voltage for specific applications (EG: allowing very brief spikes when a generator turns on).  <br />
+<br />
+A value of 0 means that the associated limit (<a href="acc_ccl.html">CCL</a> / <a href="acc_dcl.html">DCL</a>) will immediately derate to 0 when a cell voltage exceeds the maximum voltage setting.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="profile_limits_failsafe_settings.html">Failsafe Limit Settings</a></td><td valign="center" align="right"><a href="param_voltage_restore_limit_timer.html">Voltage Restore Limit Timer</a> &gt;</table>
+</body>
+</html>

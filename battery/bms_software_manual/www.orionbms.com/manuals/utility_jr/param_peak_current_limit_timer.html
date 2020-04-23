@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=14eead06 -->
+<title>Peak Current Limit Increment Timer</title>
+</head>
+<body class="doc">
+<h1>Peak Current Limit Increment Timer</h1>
+<h2>Units: [100ms]</h2>
+
+<p>This parameter represents the amount of time (in 100ms increments) that the <a href="param_peak_current_limit_percentage.html">Peak Current Limit</a> is allowed to be sustained before a code is set.</p>
+
+<div class="example">
+<p>Example: If the maximum discharge limit is set to 100 Amps and the <a href="param_peak_current_limit_percentage.html">Peak Current Limit Percentage</a> is set to 20%, then the Peak Current Limit would be 120 amps (100 amps + 20% of 100). If the Peak Current Limit Timer (this parameter) is set to 5 seconds, then the BMS would permit a discharge of 120 amps for 5 seconds before a code would be set.</p>
+
+<p>Following this example, if the discharge amperage was observed to be 140 amps, the BMS would weigh this differently and it would throw an error code sooner.</p>
+</div>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_voltage_fault_derate_timer.html">Voltage Failure Derate Timer</a></td><td valign="center" align="right"><a href="param_peak_current_limit_decrement_timer.html">Peak Current Limit Decrement Timer</a> &gt;</table>
+</body>
+</html>

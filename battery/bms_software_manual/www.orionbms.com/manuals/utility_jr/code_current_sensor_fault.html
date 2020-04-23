@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=db330aa6 -->
+<title>Current Sensor Fault (P0AC0)</title>
+</head>
+<body class="doc">
+<h1>Current Sensor Fault (P0AC0)</h1>
+
+<p>A current sensor fault is triggered if the analog voltages from the attached current sensor stray outside of the normal range or if the values from the 2 redundant current sensors do not match.  The current sensor may be sized incorrectly, the wiring harness may be faulty or the BMS or current sensor may be faulty. <br />
+<br />
+This error code will cause the BMS to enter a current sensor failsafe mode.  The BMS is fully able to protect the cells in this mode and therefore the BMS will continue to operate in a voltage based mode. <i><b>In this failsafe mode the BMS will continue to operate and protect the cells, however some calculations are unavailable and many features are disabled or degraded</b></i> such as state-of-charge calculation, open cell voltage calculation, and discharge and charge limit amperages are calculated using a backup algorithm.  <br />
+<br />
+Please see the operational manual for more detailed information on what is and what is not available in this mode. <br />
+<br />
+</p>
+<h3>Resolving the issue:</h3>
+
+<p><b>Step 1)</b> Using the Orion BMS utility, download the freeze frame data for this error code and evaluate. The runtime counter may provide insight if this fault happened when the BMS was first connected. The ADC values are the raw values from the current sensors and give insight into whether a wire was shorted or open.   <br />
+<br />
+<b>Step 2)</b> Check to ensure that the current sensor is properly connected to the BMS. The majority of current sensor faults turn out to be wiring faults. The live text data screen can be useful for monitoring the data from the current sensor to determine if an intermittent connection is to blame. If the connector was connected after the BMS was powered up, this error will be present and can be cleared using the Orion BMS utility.   <br />
+<br />
+<b>Step 3)</b>  This fault code can be triggered by currents exceeding 120% of the current sensor rating. For example, if the current sensor connected is a +/-200A current sensor, a 300A pulse would result in a current sensor failure. If this is the case, it may be necessary to switch to a current sensor with a larger rating. The freeze frame data can give clues if the current may have been exceeded by looking at cell voltages to see if they appeared to be under heavy load at the time of the fault (compare open circuit to instant cell voltages.)   <br />
+<br />
+<b>Step 4)</b> Swapping out the current sensor and wiring harness with a known good sensor and harness. If this does not resolve the problem, contact the factory for testing and repair options for the Orion BMS unit.   <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_cell_over_5v_fault.html">Cell Voltage Over 5V Fault (P0A0D)</a></td><td valign="center" align="right"><a href="code_pack_voltage_sensor_fault.html">Pack Voltage Sensor Fault (P0A01)</a> &gt;</table>
+</body>
+</html>

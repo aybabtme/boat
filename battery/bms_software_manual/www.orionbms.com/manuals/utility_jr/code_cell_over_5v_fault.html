@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=24bce628 -->
+<title>Cell Voltage Over 5V Fault (P0A0D)</title>
+</head>
+<body class="doc">
+<h1>Cell Voltage Over 5V Fault (P0A0D)</h1>
+
+<p><b>The cell tap harness should be immediately disconnected from the BMS if this fault code is set. Leaving the harness connected to the BMS is likely to cause damage to the BMS and may indicate that a cell is severely overcharged. Incorrect wiring may pose a fire and/or personal safety hazard or may lead to cell damage. Never continue to use a damaged BMS unit!</b> <br />
+<br />
+This fault code is triggered if the voltage of an individual cell (as measured by the BMS) exceeds 5.0 volts.  This fault code will only trigger after a number of samplings over the period of 1 minute to prevent false positives.  If this fault triggers, it will cause the BMS to enter into a voltage failsafe condition disabling all charge and discharge. <br />
+<br />
+This fault can be caused by incorrect cell tap wiring, a loose or disconnected cell tap, a blown fuse inside the BMS, a high resistance or loose busbar, a cell which is actually over 5 volts, or from internal damage to the BMS unit due to previous wiring faults.  This fault code should always be immediately investigated as the BMS can be damaged by cell voltage readings above 5.0v and as there may be other dangerous conditions such as over-charged cells. <br />
+<br />
+The Status LED on the BMS will rapidly flash red when this fault code is present to alert the operator to disconnect the BMS immediately. <br />
+<br />
+Note: Cells which have been over-charged or over-discharged may not be safe to use even after bringing the voltage into a correct range.  A cell which has previously been over-charged or over-discharged at any time may develop internal damage, compromising the safety of the cell.  Always consult the cell manufacturer for advice on whether a cell can be safely used after an over-charge or over-discharge event.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_open_cell_voltage_fault.html">Open Wiring Fault (P0A04)</a></td><td valign="center" align="right"><a href="code_current_sensor_fault.html">Current Sensor Fault (P0AC0)</a> &gt;</table>
+</body>
+</html>

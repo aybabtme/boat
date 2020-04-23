@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=4bd107d7 -->
+<title>Multi-Purpose Output Function</title>
+</head>
+<body class="doc">
+<h1>Multi-Purpose Output Function</h1>
+
+<p>This option allows the user to specify the function of the Multi-Purpose Output signal (pin 9 on the Main I/O harness). <br />
+<br />
+<b>Note:</b> This output is an open drain output and can sink up to 175 mA of current.  <br />
+<br />
+Most multi-purpose functions can be supplemented with a high and low temperature limit. This allows for extreme temperatures to shut down the output under abnormal circumstances (example: if the output was being used to operate a generator or solar bank it would be necessary to turn them off if the pack got too hot, etc). <br />
+<br />
+If the temperature limits are provided, the BMS will deactivate the output if either limit is exceeded (high temperature by the highest thermistor or low temperature by the lowest thermistor).  <br />
+<br />
+<b>The BMS will wait for the lowest thermistor to be 5 degrees Celsius warmer than the low temperature cut off (if enabled) and the highest thermistor to be 5 degress Celsius cooler than the maximum temperature cut off (if enabled) before re-engaging the output.</b> <br />
+<br />
+This output can be turned off if a critical fault is encountered. This option allows the BMS to turn the multi-purpose output OFF whenever a critical fault code is set.  Critical fault codes are defined by the following: <b>P0A06 / P0A07</b> (a charge / discharge enforcement fault is detected), <b>P0AC0</b> (a problem with the current sensor is detected), and <b>P0A04 / P0AFA / P0A01 / P0A03</b> (a critical voltage sensing fault is detected). The output will re-engage once these fault codes are cleared (except the Contactor Enable output). Other non-critical faults (such as thermistor fault, etc) will NOT cause this output to deactivate. <br />
+<br />
+Additionally the multi-purpose output polarity can be INVERTED making it either Active High or Active Low (active high meaning the output is ON / pulling to ground when it is activated, active low meaning the output is OFF / floating when it is activated). This can be useful for applications where a signal should normally be low and a high value would indicate a problem (or vice versa). <b>NOTE: This does NOT alter the behavior of the "Turn Off If Critical Fault" option is enabled.</b> This means that the relay output will always turn OFF (disengage) if a critical fault occurs regardless of whether this invert option is enabled. <br />
+<br />
+Available Functions:
+<ul><li>
+<p>Error Signal Output: The line is active when an error code is present and inactive when no codes are set.</p>
+</li><li>
+<p>CANBUS Controlled Output: The line is controlled remotely via a CANBUS Message. When this function is selected, an option called "MPO / MPE CAN Identifier" will become available. This allows the user to specify the CANBUS ID that the BMS will be listening for to control either the MPO or MPE output function. The length of this message must be length 8, byte #0 is used to activate the MPO (if enabled as CANBUS Controlled Output) and byte #1 is used to activate the MPE (if enabled as CANBUS Controlled Output). Only a value of "1' in bytes 0 or 1 will activate the outputs, all other values will result in the outputs turned off. Bytes 2 - 7 are currently reserved for future use.</p>
+</li><li>
+<p>Low SOC Output: The line will go high when the pack <a href="acc_soc.html">State of Charge</a> goes below the provided activate percentage. It will go low again once the SOC rises above this value.</p>
+</li><li>
+<p>Low Temperature Output: The line will go high when the pack lowest temperature goes below the provided activate temperature (Celsius). It will go low again once the lowest temperature rises above this value.</p>
+</li><li>
+<p>High Temperature Output: The line will go high when the pack highest temperature goes above the provided activate temperature (Celsius). It will go low again once the highest temperature drops below this value.</p>
+</li><li>
+<p>High Cell Voltage: The line will go high when the pack highest cell voltage goes above the provided activate cell voltage. It will go low again once the highest cell voltage drops below this value.</p>
+</li><li>
+<p>Low Cell Voltage: The line will go high when the pack lowest cell voltage goes below the provided activate cell voltage. It will go low again once the lowest cell voltage rises above this value.</p>
+</li><li>
+<p>Low Discharge Current Limit (DCL): The line will go high when the pack <a href="acc_dcl.html">Discharge Current Limit</a> goes below the provided activate value. It will go low again once the DCL rises above this value.</p>
+</li><li>
+<p>Low Charge Current Limit (CCL): The line will go high when the pack <a href="acc_ccl.html">Charge Current Limit</a> goes below the provided activate value. It will go low again once the CCL rises above this value.</p>
+</li><li>
+<p>Contactor Enable Output: The line is active as long as there are no critical fault codes present. Critical fault codes are defined by the following: <b>P0A06 / P0A07</b> (a charge / discharge enforcement fault is detected), <b>P0AC0</b> (a problem with the current sensor is detected), and <b>P0A04 / P0AFA / P0A01 / P0A03</b> (a critical voltage sensing fault is detected). The output will re-engage once these fault codes are cleared. Other non-critical faults (such as thermistor fault,  etc) will NOT cause this output to turn off. Additional criteria can be specified to turn off the output. These criteria include maximum / minimum pack temperature and maximum / minimum cell voltage. <b>NOTE: Once the contactor enable output turns off it will remain off until the unit is power cycled.</b> The maximum / minimum cell voltage limits that are specified for the Contactor Enable Output will not trigger unless they are exceeded for 10 seconds or more. So if the minimum cell voltage for the contactor enable output is set to 2.8v the output will not turn off until the lowest cell voltage is less than 2.8v for more than 10 seconds.</p>
+</li></ul>
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_multipurpose_input_function.html">Multi-Purpose Input Function</a></td><td valign="center" align="right"><a href="param_multipurpose_enable_function.html">Multi-Purpose Enable Function</a> &gt;</table>
+</body>
+</html>

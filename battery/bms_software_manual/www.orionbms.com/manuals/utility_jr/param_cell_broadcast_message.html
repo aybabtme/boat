@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=e6ac4e93 -->
+<title>Battery Cell Broadcast Message</title>
+</head>
+<body class="doc">
+<h1>Battery Cell Broadcast Message</h1>
+
+<p>For some applications it is necessary to see the real-time voltages from all the cells in a quick and efficient manner. This set of options allows the user to enable a constant CANBUS broadcast message that will sequentially send all the cell voltages within several milliseconds of each other.</p>
+
+<p><b>NOTE: Due to the high speed of the messages, this should not be enabled on an already crowded CANBUS interface, or on a CANBUS interface that has critical devices on it. It is possible that the increased traffic can reduce the response time of other devices on the selected interface.<br />
+<br />
+This should only be enabled on interfaces with a frequency of 250kBps or higher. </b></p>
+
+<p>The format for this message is as follows:</p>
+
+<p>Byte 0: Cell ID (8 bit, starting with 0)<br />
+Byte 1&amp;2: Instant Voltage (16 bit, unit: 0.1mv)<br />
+Byte 3&amp;4: Internal Resistance (15 bit, unit: 0.01mOhm)<br />
+Byte 5&amp;6: Open Voltage (16 bit, unit: 0.1mv)<br />
+Byte 7: Checksum (8 bit)<br />
+</p>
+
+<p><b>Bit 8 in byte #3 is whether or not the cell is shunting (1 indicates current is being shunted, 0 means it is not).</b> <br />
+<br />
+Checksum Calculation:
+<ol><li>
+<p>Take the broadcast ID and add 8 (the length).</p>
+</li><li>
+<p>Add bytes 0-6 to the value from step 1.</p>
+</li><li>
+<p>Chop off the least significant 8 bits (effectively turning it into an unsigned byte) and that will be the checksum value.</p>
+</li><li>
+<p>If the computed checksum does not equal the provided checksum, the values should be discarded.</p>
+</li></ol>
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_obd2_ecu_identifier.html">OBD2 ECU Identifier</a></td><td valign="center" align="right"><a href="param_editing_canbus_messages.html">Editing CANBUS Messages</a> &gt;</table>
+</body>
+</html>

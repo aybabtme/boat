@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=c247e268 -->
+<title>Voltage Restore Limit Timer</title>
+</head>
+<body class="doc">
+<h1>Voltage Restore Limit Timer</h1>
+<h2>Units: [100ms]</h2>
+
+<p>This parameter is the number of 100ms intervals that must pass (when the voltage limit is NOT exceeded) before the associated battery current limit is restored by 10% of the maximum limit. <br />
+<br />
+This timer can be adjusted to avoid oscillations in the current limits. A value of 0 indicates that the associated limit (<a href="acc_ccl.html">CCL</a> / <a href="acc_dcl.html">DCL</a>) will immediately be restored to normal once the voltage maximum is no longer being exceeded. <br />
+<br />
+This is also the timer that is used to restore limits to their original values following a voltage sensor failure condition (see: <a href="param_voltage_fault_derate_timer.html">Voltage Fault Derate Timer</a>).</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_voltage_derate_limit_timer.html">Voltage Derate Limit to Zero Timer</a></td><td valign="center" align="right"><a href="param_voltage_fault_derate_timer.html">Voltage Failure Derate Timer</a> &gt;</table>
+</body>
+</html>

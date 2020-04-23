@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135613" />
+<!-- created with HelpSetMaker, ID=8cb26fdf -->
+<title>Connecting to the OrionBMS JR</title>
+</head>
+<body class="doc">
+<h1>Connecting to the OrionBMS JR</h1>
+
+<p><img src="pics/connect_dialog_jr.png" alt="Connect Dialog" /> <br />
+
+<ol><li>
+<p>Open the OrionBMS JR utility.</p>
+</li><li>
+<p>Go to File &rarr; Connect to BMS.</p>
+</li><li>
+<p>In the connection dialog, select the appropriate serial port and press <b>Connect</b> to connect to the BMS.</p>
+</li><li>
+<p>To disconnect from the BMS, simply select "<tt>File &rarr; Disconnect From BMS</tt>" from BMS from the menu instead. <br />
+</p>
+</li></ol>
+</p>
+<h3>Connection Problems</h3>
+
+<ul><li>
+<p>If an adapter is not found by the utility (None Found), please check the <a href="trouble_adapter_not_found.html">Adapter Not Found</a> troubleshooting section.</p>
+</li><li>
+<p>A USB to Serial adapter can be plugged directly into the BMS without an extension cable, however if a serial extension cable is used to physically extend the connection or if the BMS is connected to the and the BMS, it must be a <b>straight through serial cable</b>. Any other type of RS-232 cable including a null-modem cable will <b>NOT</b> work.</p>
+</li><li>
+<p>There is an option to list all available serial ports. By default the utility will automatically check every available serial port for data coming from a JR BMS. If it fails to detect a JR BMS it will not list this serial adapter as an option. In some rare cases a serial port may be skipped incorrectly so this option allows the user to force the utility to attempt connection on an existing port.</p>
+</li><li>
+<p>If the connection fails, please check the <a href="trouble_connection_failed.html">Connection to BMS Failed</a> troubleshooting section. <br />
+<br />
+</p>
+</li></ul>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="installation_linux.html">Installation Guide for Linux</a></td><td valign="center" align="right"><a href="activity_creating_profile.html">Creating and Uploading a Profile</a> &gt;</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=00653e98 -->
+<title>Cell Population Settings</title>
+</head>
+<body class="doc">
+<h1>Cell Population Settings</h1>
+
+<p><img src="pics/cellpop_window.png" alt="Population Page" /></p>
+
+<p>This window deals with specifying which cells are <a href="acc_populated.html">Populated</a>, or active. An unpopulated cell is ignored by the BMS so it is important to only flag real cells as populated. <br />
+<br />
+There are two settable parameters on this screen:
+<ol><li>
+<p><a href="acc_populated.html">Populated</a>: This checkbox is used to specify a cell as either Populated (checked) or Unpopulated (unchecked). <br />
+<br />
+</p>
+</li><li>
+<p>Bussbar <a href="acc_intres.html">Resistance</a> (units in 0.01 mOhm): This parameter is used to set the amount of added resistance (if any) in 0.01 mOhm that the given cell has due to a bussbar or other high impedence link. Since the BMS reads cells in banks of 12 cells, there may be instances where an extended bussbar is needed within that 12 cell block. This provides a means to compensate out the additional resistance introduced by the longer wire. Small bussbars of 4 inches or less generally can be ignored.</p>
+</li></ol>
+</p>
+
+<p>There is an "Automatically Populate" button on this screen (that is enabled if the application is connected to the BMS) that allows for the BMS to intelligently determine which cells are populated based on which voltages read above 0v. Before pressing this button, make sure that all desired cells are plugged in.</p>
+
+<p><b>NOTE: The Automatically Populate button is not guaranteed to always produce the correct population table. If a cell is accidentally unplugged, shorted, or is not wired properly this can cause invalid results. The population table should always be reviewed afterwards for correctness.</b></p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_nominal_cell_resistance.html">Nominal Cell Resistance</a></td><td valign="center" align="right"><a href="param_balancing_description.html">How Cell Balancing Works</a> &gt;</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=ff2687ca -->
+<title>Voltage Failure Derate Timer</title>
+</head>
+<body class="doc">
+<h1>Voltage Failure Derate Timer</h1>
+<h2>Units: [100ms]</h2>
+
+<p>This parameter is the number of 100ms intervals that must pass (when a critical voltage sensing fault is detected) before the associated battery current limit is cut by 10% of the maximum limit.  <br />
+<br />
+A critical voltage sensing fault is defined as an error condition that can impact the accuracy of the voltage sensing circuits and therefore put the immediate health of the battery pack in jeopardy (broken tap wire, severed pack sensor wire, internal digital sensor circuit failure, etc). This value should take into account the amount of time necessary to bring the application to a halt (EG: an electric vehicle may need additional time in order to pull off the road before the limits are cut entirely to protect the battery). <br />
+<br />
+A value of 0 means that the associated limit (<a href="acc_ccl.html">CCL</a> / <a href="acc_dcl.html">DCL</a>) will immediately derate to 0 when a critical voltage sensor fault is detected.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="param_voltage_restore_limit_timer.html">Voltage Restore Limit Timer</a></td><td valign="center" align="right"><a href="param_peak_current_limit_timer.html">Peak Current Limit Increment Timer</a> &gt;</table>
+</body>
+</html>

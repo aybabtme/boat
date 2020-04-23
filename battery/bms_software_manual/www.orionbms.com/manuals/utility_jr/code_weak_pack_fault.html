@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=fe4830c3 -->
+<title>Weak Pack Fault (P0A02)</title>
+</head>
+<body class="doc">
+<h1>Weak Pack Fault (P0A02)</h1>
+
+<p>This error code is designed to alert a user to if the battery pack has degraded and is weak, <i><b>this error is triggered based only when pre-programmed conditions are met and does not necessarily indicate a weak is actually weak since the error threshold may be set wrong.</b></i> This error may be falsely triggered by incorrect profile settings, a battery pack with an abnormally low state-of-charge or by malfunctioning thermistors which are not accurately reading the pack temperature.  </p>
+
+<p>This fault is triggered when the pack state-of-health falls below the value programmed into the BMS profile that indicate when a battery pack is considered ?weak?.  A low state-of-health measurement is calculated 50% based on pack capacity and 50% based on cell resistance.  For more information on how state of health is calculated, please see the operational manual.  </p>
+
+<p><i><b>Important Note:  Weak pack faults are informational errors only and have NO DIRECT IMPACT on the operation of the BMS.</b></i> This error code will NOT cause the charge or discharge enable outputs to turn off and will NOT cause the BMS to go into any degraded operating mode.  While this error code will not impact the operation of the BMS, this error message likely indicates a problem exists and the actual problem itself (not this error code) may cause the BMS to limit charge or discharge current (as would be the case with a high resistance cell.)  A degraded battery pack may result in degraded performance for other reasons such as low capacity or high resistance.</p>
+<h3>Resolving the issue:</h3>
+
+<p><b>Step 1)</b> Using the Orion BMS utility, check for weak cell fault codes. If weak cell faults are present, address those error codes before addressing this code. If this is the only code download the freeze frame data using the Orion BMS utility.   <br />
+<br />
+<b>Step 2)</b> Review the freeze frame and determine if the state of charge was excessively low (below 1-5% SOC). In case state-of-charge drift settings are incorrect, review open cell voltages (not instantaneous voltages) and compare to a typical discharge curve for the specific chemistry. For example, for iron phosphate, an open circuit voltage below 2.8v would indicate a very low state of charge. Cell resistances rapidly increase at very low states of charge. If this is the case simply charging the battery and preventing it from discharging this far may solve the problem. <br />
+<br />
+<b>Step 3)</b> If this fault shows up when cold check the thermal compensation settings to ensure proper resistances are specified for lower temperatures. Cell resistances rise exponentially when battery temperature drops and if settings are incorrect, can easily trigger a false error message. Likewise, ensure thermistors are able to accurately and correctly measure cell temperatures. If cells are split into different physical boxes in different locations, ensure each box has at least one thermistor so that the Orion BMS is aware of the coldest part of the pack. <br />
+<br />
+<b>Step 4)</b> Review the freeze frame data for cell resistances. If cell resistances are high test the battery pack manually and replace cells or pack if necessary. <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_pack_voltage_sensor_fault.html">Pack Voltage Sensor Fault (P0A01)</a></td><td valign="center" align="right"><a href="code_voltage_redundancy_fault.html">Voltage Redundancy Fault (P0A03)</a> &gt;</table>
+</body>
+</html>

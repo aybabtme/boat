@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=14c386f0 -->
+<title>Connection To BMS Failed</title>
+</head>
+<body class="doc">
+<h1>Connection To BMS Failed</h1>
+
+<p><img src="pics/serial_failed.png" alt="Connection Failed" /></p>
+
+<p>There are a number of reasons why the connection might fail. The common ones are:</p>
+
+<p>Please attempt the following steps before contacting us for support.</p>
+
+<p><b>Connection Specifications:</b><br />
+
+<ul><li>
+<p>Baud-Rate: 9600<br />
+</p>
+</li><li>
+<p>Stop-Bits: 1<br />
+</p>
+</li><li>
+<p>Data-Bits: 8<br />
+</p>
+</li><li>
+<p>Parity: Even<br />
+<br />
+<br />
+<b>Diagnostic Steps:</b>
+<ol><li>
+<p><b>Ensure the BMS is powered when connecting to the BMS.</b>. The BMS requires external power to respond to the communication.  At a minimum, +12V (up to +60V) must be applied either Main I/O connector pin 2 (Blue / READY mode power) or Main I/O pin 4 (Red / CHARGE mode power). Pin 6  must be connected to the power supply?s negative. The main I/O connector can be unplugged from the unit and a multimeter used to verify the power source. The power supply should also be checked when the unit is powered since it is possible that a connection is high resistance and there is a voltage drop causing the BMS not to receive full power.  Additionally, the current draw can be checked to verify that the BMS is operating by measuring the current used by the BMS. It should be over 75mA and below 200mA. <br />
+<br />
+</p>
+</li><li>
+<p><b>Verify that the serial connection is correct</b> by reading the section in the Wiring Manual "Digital RS232 Serial Communication". Incorrect wiring will prevent proper communication. <br />
+<br />
+</p>
+</li><li>
+<p><b>Restart the application and power cycle the BMS (remove all power from the BMS for &gt; 45 seconds) and try again</b>. Please note that new hardware versions of the Orion BMS are now able to remain alive in low power sleep for up to 30 seconds and actually require power disconnected for at least that length of time. <br />
+<br />
+<br />
+<br />
+</p>
+</li></ol>
+</p>
+</li></ul>
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="page_troubleshooting.html">Appendix A: Troubleshooting Utility Connection</a></td><td valign="center" align="right"><a href="trouble_adapter_not_found.html">No Adapter Found (None Found)</a> &gt;</table>
+</body>
+</html>

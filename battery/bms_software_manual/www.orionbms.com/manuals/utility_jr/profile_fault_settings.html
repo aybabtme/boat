@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=050185f8 -->
+<title>Fault Settings</title>
+</head>
+<body class="doc">
+<h1>Fault Settings</h1>
+
+<p><img src="pics/fault_settings_jr.png" alt="Faults Page" /></p>
+
+<p>This screen contains a collection of settings related to the sensitivity of the various fault code thresholds in the BMS.</p>
+<h3>Pack Voltage Mismatch</h3>
+
+<p>The BMS can be configured to set a critical fault code if it detects a large enough difference between the measured pack voltage (via the total pack voltage sensor) and the sum of all the monitored cell voltages (referred to as the summed pack voltage).  <br />
+<br />
+The fault code that is set for this condition is considered a critical fault code and will turn off the charger safety, charge enable and discharge enable outputs on the BMS (the DCL and CCL will also reduce to 0A). <br />
+<br />
+</p>
+<h3>Weak Cell Faults</h3>
+
+<p>The BMS is aware of the nominal (normal) <a href="acc_intres.html">Internal Resistance</a> of the battery pack based on the data entered into the <a href="param_nominal_cell_resistance.html">Nominal Cell Resistance</a> table. This value is used to determine the maximum allowable internal resistance for a cell before it is determined to be weak or faulty. In general, this value can be kept at 200% unless finer control is necessary. <br />
+<br />
+The BMS will also set a weak cell fault code if the difference between the open (sitting) cell voltage of any one cell and the average of the rest of the cells is too great. This typically indicates that the cell is either severely out of balance or has greatly diminished capacity. <br />
+<br />
+A weak pack fault indicates when the pack health drops below a programmed value.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="page_profile_descriptions.html">Battery Profile Descriptions</a></td><td valign="center" align="right"><a href="param_nominal_cell_resistance.html">Nominal Cell Resistance</a> &gt;</table>
+</body>
+</html>

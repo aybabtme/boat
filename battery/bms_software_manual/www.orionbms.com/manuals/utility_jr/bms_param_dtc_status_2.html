@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=82c4fd2f -->
+<title>DTC Status #2</title>
+</head>
+<body class="doc">
+<h1>DTC Status #2</h1>
+<h3>Default Length (Bytes): 2</h3>
+
+<p>This parameter contains the status of several BMS fault codes. The format is as follows:</p>
+
+<p>Bit  #1 (0x0001): P0A07 (Discharge Limit Enforcement Fault)<br />
+Bit  #2 (0x0002): P0A08 (Charger Safety Relay Fault)<br />
+Bit  #3 (0x0004): P0A09 (Internal Memory Fault)<br />
+Bit  #4 (0x0008): P0A0A (Internal Thermistor Fault)<br />
+Bit  #5 (0x0010): P0A0B (Internal Logic Fault)<br />
+Bit  #6 (0x0020): RESERVED<br />
+Bit  #7 (0x0040): RESERVED<br />
+Bit  #8 (0x0080): RESERVED<br />
+<br />
+Bit  #9 (0x0100): RESERVED<br />
+Bit #10 (0x0200): RESERVED<br />
+Bit #11 (0x0400): RESERVED<br />
+Bit #12 (0x0800): RESERVED<br />
+Bit #13 (0x1000): RESERVED<br />
+Bit #14 (0x2000): RESERVED<br />
+Bit #15 (0x4000): RESERVED<br />
+Bit #16 (0x8000): RESERVED<br />
+<br />
+For all of these values, a "1' signifies that the signal or relay in question is enabled or active (high). A "0' indicates that it is inactive or off (low).</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="bms_param_dtc_status_1.html">DTC Status #1</a></td><td valign="center" align="right"><a href="page_trouble_codes.html">Appendix C: Diagnostic Trouble Code Definitions</a> &gt;</table>
+</body>
+</html>

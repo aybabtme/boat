@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=9fa66bfa -->
+<title>Pack Voltage Sensor Fault (P0A01)</title>
+</head>
+<body class="doc">
+<h1>Pack Voltage Sensor Fault (P0A01)</h1>
+
+<p>This fault code is set if the total pack voltage sensor reads zero volts. This error will also likely cause a voltage redundancy fault code. This fault code may be the result of the voltage tap connection not being connected when the BMS was turned on, a wiring error on the total pack voltage sensor or a voltage tap that is wired to the wrong location. <br />
+<br />
+If this error is triggered the BMS will assume that it cannot accurately measure the voltage of the battery pack and will go into a voltage failsafe mode. The voltage failsafe mode is the most critical condition and <i><b>the BMS will not allow charge or discharge when this error is present.</b></i> <br />
+<br />
+</p>
+<h3>Resolving this error code:</h3>
+
+<p><b>Step 1)</b> Check to insure the the total pack voltage sensor is properly connected to the Orion BMS and that the full pack voltage is present at the connector. It may be possible that pack voltage is interrupted by a safety disconnect or blown fuse in the battery pack if those are included in the battery pack design.   <br />
+<br />
+<b>Step 2)</b> If the BMS unit was powered before the total pack voltage sensor connector was connected, this error code may simply be caused by the BMS not seeing voltage when it was first powered up.  If this was the case, attempt to clear this error code and monitor to see if the error code comes back. To clear codes on Revision A - C units, either remove all power from the unit for &gt;30 seconds or use the utility to clear the codes. For Revision D and newer units, the best approach is to use the utility to clear the error code. If the Revision D or newer unit is setup not to store error codes over power failures, power all power can be removed from the unit for &gt;45 seconds to clear the error codes. Clearing error codes will delete freeze frame data that may be useful for diagnostics. If other errors are present review the freeze frame data before clearing. <br />
+<br />
+<b>Step 3)</b> Using the BMS utility download the freeze frame data for this error code by clicking on the error code (See the software manual for more information on downloading the freeze frame data). The text will show the total pack voltage when this error was triggered.  Review the data for clues about why the voltage was not measured (for example, if the runtime counter is zero, it may be helpful to know the error happened when the BMS unit was powered on.)  The real-time total pack voltage sensor value can be seen on the ?Live Text Data? screen and may be useful for diagnosing loose or intermittent connections. <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_current_sensor_fault.html">Current Sensor Fault (P0AC0)</a></td><td valign="center" align="right"><a href="code_weak_pack_fault.html">Weak Pack Fault (P0A02)</a> &gt;</table>
+</body>
+</html>

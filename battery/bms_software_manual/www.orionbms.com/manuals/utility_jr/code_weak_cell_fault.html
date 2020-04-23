@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=8a2cb117 -->
+<title>Weak Cell Fault (P0A80)</title>
+</head>
+<body class="doc">
+<h1>Weak Cell Fault (P0A80)</h1>
+
+<p>This fault is triggered based on thresholds programmed into the BMS profile that indicate when a cell is ?weak?.  While this error code is designed to indicate a cell is weak, <b><i>this error is triggered when certain pre-programmed conditions are met and does not necessarily indicate a dead cell because it can also be triggered by loose busbars, other wiring issues or incorrect error threshold settings in the profile.</i></b> <br />
+<br />
+<b>Important Note:</b> Weak cell faults are informational errors only and have <i><b>NO DIRECT IMPACT</b></i> on the operation of the BMS. This error code will NOT cause the charge or discharge enable outputs to turn off and will NOT cause the BMS to go into any degraded operating mode.  While this error code will not impact the operation of the BMS, this error message likely indicates a problem exists and the actual problem itself (not this error code) may cause the BMS to limit charge or discharge current (as would be the case with a high resistance cell.)  If the charge and discharge limits are both zero look for other fault codes, specifically open wire faults or total pack voltage fault codes to begin addressing the issue. <br />
+<br />
+The ?weak? cell fault can be triggered as the result of the following 2 conditions: <br />
+<br />
+
+<ol><li>
+<p><b>High measured cell resistance:</b> The Orion BMS measures each cell?s internal resistance and compares the measured resistance against the nominal resistance specified in the profile in the ?temperature compensation? section.  The current temperature is used to select the nominal resistance value to compare against.  If the measured resistance is higher than the nominal resistance by the amount specified in the profile (General Settings &rarr; Maximum Resistance [%]), a fault code will be triggered.  For example, if the nominal resistance is 1 mOhm at 20 degrees celsius and the BMS is programmed with a 400% resistance threshold, an error code will be triggered if the cell resistance is measured at more than 4 mOhm resistance at 20 degrees celsius.   <br />
+<br />
+</p>
+</li><li>
+<p><b>Significant difference in open cell voltage between one cell and the rest of the cells:</b> In addition to measuring the resistance of the cell, the BMS also looks for significant differences between the open cell voltage of a cell and the rest of the pack.  The BMS calculates the open circuit voltage of each cell (this is the voltage as if the cell were setting at rest (no load) even when a load is applied to the cell.)  The BMS compares each cell?s open circuit voltage to the pack average open circuit voltage and if they differ more than the preset value in the profile, a weak cell fault is triggered.  The setting is under the Cell Settings tab as ?Max Open Cell Variance? and is in volts.  This can be caused by a cell that has deteriorated dis-proportionally to the rest of the battery pack or by a cell balance issue.  </p>
+</li></ol>
+</p>
+
+<p>The above criteria is what actually triggers this error code, however the following conditions may cause one of the conditions above and therefore also trigger this error: <br />
+<br />
+
+<ol><li>
+<p><b>Loose busbar or interconnect cable resistance:</b>  Because the BMS measures cell voltages by measuring the voltage between each of the cell voltage tap connections, the BMS also ?sees? the resistance of the busbar or cable connecting the cell with the adjacent cell. Because of this, the busbar resistance is included in the measured cell resistance. If a busbar, cable or battery terminal is loose, corroded or oxidized, this can cause the measured resistance to rise and trigger the error based on the threshold in #1 above. <br />
+<br />
+</p>
+</li><li>
+<p><b>Significant difference in cell capacity than other cells:</b> A cell with a significantly lower capacity than the rest of the pack will likely cause a large difference in open cell voltages at lower states of charge.  Additionally, the internal resistance of cells typically goes up when they are at very low and high states of charge.  A lower capacity cell may also trigger a weak pack error code. <br />
+<br />
+</p>
+</li><li>
+<p><b>Cell being out of balance with the rest of the pack:</b> A cell that is significantly out of balance with the rest of the pack can trigger this error message for the same reason as above.  For balance issues, the issue can easily be resolved by simply balancing the pack.   <br />
+<br />
+</p>
+</li></ol>
+</p>
+<h3>Resolving this error code:</h3>
+
+<p><b>Step 1)</b> Identify the affected ?cells? by opening the Orion BMS utility and going to the Diagnostic Trouble Code page.  On the right side of the page, there is a box indicating ?Weak Cells.?  Make note of which cells are listed in the event that multiple cells have been set as weak.  A freeze frame may also be available which will give much more detailed information about the conditions when the fault occurred.  Only one freeze frame will be stored, so if multiple cells are ?weak?, detailed information will only be available for the first cell that was flagged as weak (chronologically). <br />
+<br />
+<b>Step 2)</b> Identify if the fault was set due to high resistance or due to open circuit voltage.  This can be determined by looking at the freeze frame data and looking at the cell resistances and the open cell voltages and comparing them to the values programmed into the BMS profile.  For example, if the affected cell?s open circuit voltage is 0.5V lower than most of the other cells and the trigger threshold is 0.5V, that is likely the cause.  Likewise, if the cell resistance is 4 mOhm and the threshold is 400% with the nominal resistance of 1 mOhm for this specific temperature, that is likely the cause.  Goto the next step based on whether the issue is high resistance or open cell voltage difference.</p>
+<h3>High Resistance</h3>
+
+<p><b>Step 1)</b> Check if there is additional resistance from long cables, busbars, fuses and particularly loose terminals.  This can be done by inspecting the battery pack.  If a longer cable or longer busbar is used to connect the cell in question to the next cell, ?busbar compensation? or re-wiring may be required to compensate for the additional resistance.  Please see the wiring manual for more information on high resistance cables.  Special rules apply to the placement of fuses and if a fuse is directly adjacent to a ?weak cell?, please review the wiring manual to ensure proper placement. <br />
+<br />
+<b>Step 2)</b> Check to see if the high resistance can be explained by difference in temperature. Low temperatures can cause dramatic increases in resistance for some cells. If the cell is a significantly lower temperature than the rest of the pack such as when a pack is split into multiple locations, it may be necessary to add (or move) a thermistor to this cell so the BMS can monitor the temperature better or ideally, alter the thermal management to keep all cells roughly the same temperature.   <br />
+<br />
+<b>Step 3)</b> Determine if the high resistance can be explained by the state of charge. The internal resistance of most Lithium-ion cells will spike significantly at very high and low states of charge such as the top 2% and bottom 2%. Look at the actual cell voltage under no load (open cell voltage) for clues if the cell is fully charged or fully discharged. <br />
+<br />
+<b>Step 4)</b> Check the nominal resistance in the BMS profile to ensure it is proper for the type of cell selected at the temperature where the error code was triggered. The nominal resistance table can be found in the BMS utility under thermal compensation. The Orion BMS may incorrectly set an error if the nominal resistances in this table are wrong. <br />
+<br />
+<b>Step 5)</b> Manually measure the resistance of the cell at the actual cell terminals. At this step, it is now likely that either the cell or the busbars connecting the cell to the next cell actually has a high resistance. Cell resistance can be measured by applying a known load (or source) to the battery pack and measuring the voltage drop at the cell. Care must be taken to ensure that the known load or source will not over-charge or over-discharge any cell in the pack as this can cause damage and a serious safety hazard. This can be done by using a multimeter with the leads on the actual cell terminals (not the screws, ring terminals, etc). With the leads on the terminals, note the cell voltage with no load (or source). Then apply the known source and measure the cell?s voltage again at the terminal after the load has been on 10 seconds. Calculate the cell?s DC resistance with the following calculation:  <br />
+<br />
+DC resistance = (Voltage&nbsp;before&nbsp;load - Voltage&nbsp;after&nbsp;load) / known&nbsp;amperage.  <br />
+<br />
+If the cell has a high resistance then the cell should likely be replaced. <br />
+<br />
+<b>Step 6)</b> If cell resistance is good, look specifically for loose terminals, oxidized terminals or bad crimps.  The resistance of the busbars and connections will increase dangerously if terminals are loose, oxidized, etc. Busbars and terminals can oxidize or corrode in ways that are not visible or obvious. If there is a question, remove, clean and reseat the busbar or terminal (always disconnect all cell voltage tap and pack voltage connectors from the BMS first). The resistance of the busbars can be measured by applying a known load (or source) to the battery pack and measuring the voltage drop on the busbar and therefore calculating the resistance.  Care must be taken to ensure that the known load or source will not over-charge or over-discharge any cell in the pack as this can cause damage and a serious safety hazard.  Using a multimeter capable of measuring voltages in millivolts, measure the voltage between the actual cell terminal of the suspect cell and the actual cell terminal of the next adjacent cell connected to the same busbar.  The measurement should read 0.000v (or almost that) with no load.  When a known load is applied, make note of the voltage.  Typically the voltage drop should only be a few millivolts, however the actual value will vary depending on the amperage used to test and based on the thickness of the busbars and terminals.  Because of this, it may be useful to measure the resistance of surrounding busbars for comparison.  The resistance of the busbar can be calculated with the following formula:  busbar&nbsp;resistance (in ohms) = Voltage&nbsp;measured / amperage.</p>
+<h3>Difference in Open Circuit Voltage:</h3>
+
+<p><b>Step 1)</b> Check the cell voltages when the battery pack is fully charged. Carefully monitoring the battery for unsafe conditions such as high temperature and over-voltage, charge the battery pack up to full charge (use the BMS to control the charger ensuring that no cells get over-charged.) When at a full state of charge, compare all cell voltages using the Orion BMS utility or a multimeter. For iron-phosphate cells, the voltage should be compared immediately after the charge termination since the voltages will quickly fall back into the 3.35 volt range and will mask the difference in balance.  If the cell in question has a noticeably different voltage than the rest of the pack, the difference in open circuit voltage is likely due to a difference in balance.  If the open circuit voltage is identical to the rest of the pack at full state of charge, the issue is likely that the cell has a deteriorated capacity. To confirm deteriorated capacity, cell voltages can be graphed using the data logging and graphing capabilities in the Orion BMS utility and the shape of the discharge curves can be analyzed.   <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_internal_conversion_fault.html">Internal Conversion Fault (P0A00)</a></td><td valign="center" align="right"><a href="code_low_cell_voltage_fault.html">Low Cell Voltage Fault (P0AFA)</a> &gt;</table>
+</body>
+</html>

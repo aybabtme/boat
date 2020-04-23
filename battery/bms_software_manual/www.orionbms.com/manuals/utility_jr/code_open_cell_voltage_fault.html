@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=d8bab8fb -->
+<title>Open Wiring Fault (P0A04)</title>
+</head>
+<body class="doc">
+<h1>Open Wiring Fault (P0A04)</h1>
+
+<p><b><i>This fault is a serious code that effectively disables the BMS and often causes many other fault codes to occur.</i></b> When diagnosing errors this error code should be corrected first. This error code indicates that the Orion BMS has determined that a cell tap wire is either weakly connected or not connected and as a result, it has determined that it cannot accurately measure cell voltages. Wiring faults can be caused by improperly wired cell taps, loose cell tap connection, cell taps that are not connected to the battery, internal fuses blown inside the BMS or other internal damage to the BMS from previous improper wiring. <br />
+<br />
+<b>Warning: Never continue to use a damaged unit. Damaged units must be immediately disconnected from all wiring harnesses and power sources including cell taps and Main I/O.</b> Please contact contact the factory or an authorized reseller for evaluation and repair options. There are no user servicable parts inside the unit and opening the enclosure will void the warranty. Due to hazardous voltages and risks posed by improper repairs, users should never attempt to repair a damaged BMS unit. Ewert Energy is not liable for damage caused by user attempted repairs or continued use of a damaged BMS unit. <br />
+<br />
+<b>Note:</b> The Orion BMS scans for this fault condition at set intervals and it may take several minutes for this error to show up depending on the severity of the fault condition.  This is especially true if a wire has a high impedance connection or is intermittently failing.  Certain intermittent wiring errors may not trigger this error message since the error must be present for a minimum amount of time to trigger.   <br />
+<br />
+<b>Note:</b> It is possible for a ?non-populated? cell to appear under the "open wire" list on the diagnostic trouble code tab even if they are wired properly.  Even though the cell may be listed, it will not set an actual error code.</p>
+<h3>Results of this error code:</h3>
+
+<ol><li>
+<p> When this error is present the BMS will enter a voltage failsafe mode. Voltage failsafe mode is the most serious and restrictive failure mode. Since the BMS cannot guarantee the safety of the cells, <b><i>this fault code will prohibit the BMS from allowing charge and discharge.</i></b></p>
+</li><li>
+<p> A single open wire (wiring fault) in a cell group may cause cell voltages in the rest of the cell group to be incorrectly measured.  Cell voltages may read artificially higher or lower due to the effects of the protection diodes contained within the Orion BMS and cannot be trusted when this error message is present.</p>
+</li></ol>
+<h3>Resolving this error code:</h3>
+
+<p>    This error is usually caused by either a cell tap wire that is loose or disconnected  or the resulting internal damage to the BMS from previous incorrect wiring such as reversing two cell taps. <br />
+<br />
+<b>Step 1)</b> The Orion BMS utility will indicate which cell tap numbers the BMS has detected are open.  Please note that these are the tap positions on the BMS itself and do not necessarily correspond to the actual cell numbers.  Inspect the wiring harness for obvious issues such as disconnected wires or obviously loose wires.  Terminal oxidation, loose terminals and bad crimps can all cause issues and may not be visually obvious.  If external fuses are used, verify they are both good and sufficiently low resistance. <br />
+<br />
+<b>Step 2)</b> Test the wiring harness with the Orion BMS tap validation tool.  The tap validation tool is designed to check the voltage of each cell tap and indicate when wiring errors are found.  The tap validation tool can locate completely disconnected wires and wires that are very high resistance.  It is possible that if wires are intermittently loose or only moderately high impedance, that the tool may not find them.   <br />
+<br />
+<b>Step 3)</b> If the BMS has been previously wired incorrectly, it is possible internal damage to the BMS can cause this fault condition.  In all hardware revisions of the Orion BMS, each cell tap has an internal fuse in series with the tap in order to protect the BMS from significant damage and to protect the wiring harnesses in the event current is forced through the cell taps.  In hardware revisions D and earlier, the fuses are designed to blow if any cell is exposed to more than 6V or less than 0V with respect to the next lowest cell.  If this happens, even for a very brief time, the fuse will blow and the cell tap will behave as an open wire since it is internally open.  <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_low_cell_voltage_fault.html">Low Cell Voltage Fault (P0AFA)</a></td><td valign="center" align="right"><a href="code_cell_over_5v_fault.html">Cell Voltage Over 5V Fault (P0A0D)</a> &gt;</table>
+</body>
+</html>

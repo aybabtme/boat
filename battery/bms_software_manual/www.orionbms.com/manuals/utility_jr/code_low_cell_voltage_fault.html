@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=b51f9ff1 -->
+<title>Low Cell Voltage Fault (P0AFA)</title>
+</head>
+<body class="doc">
+<h1>Low Cell Voltage Fault (P0AFA)</h1>
+
+<p>This fault code is triggered simply when the voltage of a cell falls below 0.09 volts (90 mV).  This fault can be caused by a cell that is incorrectly set in the BMS profile as a ?populated? cell, a disconnected cell wiring harness, a very dead cell, or a wiring error. This fault code can also indicate two or more cell voltage tap wires are backwards. <i><b>If cell voltage tap wires are backwards, the cell voltage tap connectors should be immediately disconnected from the BMS unit</b></i> until the issue is corrected as damage may occur to the unit and may drain the attached cells damaging them.  <br />
+<br />
+</p>
+<h3>Resolving the issue:</h3>
+
+<p><b>Step 1)</b> Using the Orion BMS utility, identify all affected cells listed on the far right hand side of the diagnostic trouble code screen.  Freeze frame data may be available and may offer clues as to the cause, however only one freeze frame will be stored for the first occurrence of the error and may not show information on all faults. <br />
+<br />
+<b>Step 2)</b> Determine if the cell in question is one the BMS is supposed to be monitoring. The Orion BMS is sold in increments of 12 cells, and most applications do not have exactly the same number of cells that the BMS supports. Because of this, the BMS must be told which cells are connected, or ?populated.? If the cell triggering the error code is not supposed to be a ?populated? cell, open the cell population table in the BMS utility and adjust the cell population table accordingly and upload the updated profile to the BMS.  Care should be taken to ensure that the correct profile is being modified. For profile instructions, please refer to the Orion BMS software manual.   <br />
+<br />
+<b>Step 3)</b> Ensure that the cell voltage tap wiring harnesses are connected to the proper connectors.  Note that even though the Orion BMS units only have certain cell groups populated internally according to the size unit purchased.  Taps connected to cell groups that are ?unpopulated? internally are ignored.  If the cell voltage tap connectors are not connected in the proper order, or were connected after the unit was powered up, reseat the connectors and clear the error codes using the Orion BMS utility.  Note that clearing error codes may clear other codes containing useful information, so any additional information should be retrieved before codes are cleared.   <br />
+<br />
+<b>Step 4)</b> Measure the actual cell voltage using a multimeter. If cell voltage does not match the voltage reported in the BMS, there likely is a wiring error and/or internal damage to the BMS unit. The BMS is designed to recover automatically after minor wiring faults less than 24 volts, however wiring faults may still damage the BMS. Never leave a damaged Orion BMS unit connected to the battery pack. Please contact the factory for repair information. Please refer to the Orion BMS wiring manual for more information on proper wiring.   <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="code_weak_cell_fault.html">Weak Cell Fault (P0A80)</a></td><td valign="center" align="right"><a href="code_open_cell_voltage_fault.html">Open Wiring Fault (P0A04)</a> &gt;</table>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=b331e550 -->
+<title>Basic Limit Settings</title>
+</head>
+<body class="doc">
+<h1>Basic Limit Settings</h1>
+
+<p><img src="pics/limits_basic_jr.png" alt="Limits Page" /></p>
+
+<p>This section allows for configuring the settings related to the current limits (both charge and discharge) that the BMS will use to protect the battery pack.</p>
+<h3>Maximum Continuous Limit</h3>
+
+<p>This is the maximum amperage (unit is 1 amp) that the pack is allowed to accept (charge) or output (discharge). Charge amperage is current flowing in to the battery pack and discharge amperage is current flowing out of the battery pack.</p>
+
+<p><b>Note:</b> For increased <a href="acc_intres.html">Internal Resistance</a> accuracy, these values should be set close to what the maximum values seen in the application are (eg: if the application will only see a maximum of 100 amp discharge, the maximum discharge limit should be around 100 amps).</p>
+<h3>Maximum Analog Output</h3>
+
+<p>This is the maximum amperage (unit is 1 amp) that 5v on the analog limit outputs represent and can be used to scale the 0-5v analog output voltage range.</p>
+
+<p>This can be useful for applications capable of current limits greater than what the battery pack is capable of.</p>
+
+<p>Example: Assuming the battery pack current limit is 50A and this value is set to 100A, then 2.5v would be output on the analog current limit output pin. If this value were set to 50A and the pack current limit is 50A then there would be 5.0v on the analog output line.</p>
+<h3>Maximum Amperage While Charging</h3>
+
+<p>This is the maximum charge current limit (CCL) that the BMS will enforce when the BMS is in CHARGE mode (when Charge Power is energized to at least +12v). This allows for a different maximum charge current limit while charging than when the application is in READY mode (EG: a different limit for slow charging off the grid versus regenerative braking charging).</p>
+<h3>Stop Charging At SOC</h3>
+
+<p>In some applications, it may be useful to have the charger terminate once a given pack SOC is reached instead of simply terminating at a given voltage. This can be accomplished by using the <tt>Stop Charging When SOC Reaches X</tt> option. If this is enabled the charger will stop charging once the <a href="acc_soc.html">Pack SOC</a> reaches the <a href="param_charged_soc.html">Charged SOC</a>%. The Pack SOC% must fall below this SOC in order for the charger to re-engage.</p>
+<h3>Associated Parameters:</h3>
+
+<ul><li>
+<p><a href="param_minimum_temperature_limit.html">Minimum Temperature DCL/CCL</a></p>
+</li><li>
+<p><a href="param_start_derating_charge_limit_high_soc.html">Start Derating Charge Limit At High SOC</a></p>
+</li><li>
+<p><a href="param_start_derating_discharge_limit_low_soc.html">Start Derating Discharge Limit At Low SOC</a></p>
+</li><li>
+<p><a href="param_low_soc_limit_derating.html">Low SOC Discharge Limit Derating</a></p>
+</li><li>
+<p><a href="param_high_soc_charge_limit_derating.html">High SOC Charge Limit Derating</a></p>
+</li><li>
+<p><a href="param_start_derating_limit_low_temp.html">Start Derating Limit At Low Temperature</a></p>
+</li><li>
+<p><a href="param_start_derating_high_temp.html">Start Derating Limit At High Temperature</a></p>
+</li><li>
+<p><a href="param_low_temperature_limit_derating.html">Low Temperature Limit Derating</a></p>
+</li><li>
+<p><a href="param_high_temperature_limit_derating.html">High Temperature Limit Derating</a></p>
+</li></ul>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="profile_limits_settings.html">Limits Settings</a></td><td valign="center" align="right"><a href="param_minimum_temperature_limit.html">Minimum Temperature DCL/CCL</a> &gt;</table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135614" />
+<!-- created with HelpSetMaker, ID=3c6a83cd -->
+<title>Recent Events</title>
+</head>
+<body class="doc">
+<h1>Recent Events</h1>
+
+<p><img src="pics/recent_events_jr.png" alt="Recent Events" /> <br />
+<br />
+This section lists events and warnings that have occurred recently. These events include:
+<ul><li>
+<p>Relays turning on and off</p>
+</li><li>
+<p>State of charge drift conditions being met</p>
+</li><li>
+<p>Fault codes being set</p>
+</li><li>
+<p>BMS powering up</p>
+</li><li>
+<p>Power input status changes </p>
+</li><li>
+<p>Change to cell balancing status <br />
+</p>
+</li></ul>
+</p>
+
+<p><b>NOTE: The "Refresh Events' button must be pressed before the utility will request the current event list from the BMS.</b> <br />
+<br />
+Every event is stored with a timestamp that is relative to the global runtime counter (that is, the counter that tracks the total number of seconds the BMS has been in service). This runtime counter cannot be cleared or reset and serves as a permanently unique identifier for each event. <br />
+<br />
+Up to <b>50</b> events are stored in memory in a round-robin style table (meaning that old events are written over once more than 50 events are stored).  <br />
+<br />
+Events are stored in non-volatile long term memory and persist over power loss or restarting / unplugging the BMS.</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="screen_histogram_events_data.html">Histogram And Events</a></td><td valign="center" align="right"><a href="screen_soc_histogram.html">State of Charge History</a> &gt;</table>
+</body>
+</html>

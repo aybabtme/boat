@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="style.css" type="text/css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="date" content="20150922135615" />
+<!-- created with HelpSetMaker, ID=adaeb7d9 -->
+<title>Internal Communication Fault (P0A1F)</title>
+</head>
+<body class="doc">
+<h1>Internal Communication Fault (P0A1F)</h1>
+
+<p>This error indicates that the Orion BMS has encountered an error trying to communicate with the isolated circuitry that measure cell tap voltages.  This error can be caused by external electrical noise if the BMS is not properly grounded or by an internal hardware failure.</p>
+<h3>Resolving the issue:</h3>
+
+<p><b>Step 1)</b> Ensure that the BMS case is properly grounded.  Almost all cases of this error are caused by grounding issues. In most cases, the enclosure should be grounded to the chassis, however is some applications without a grounded chassis, it may be necessary to ground the BMS enclosure to the negative wire on the 12v power supply or another ground. Please refer to the wiring manual for more information. <br />
+<br />
+<b>Step 2)</b> Remove all sources of noise, clear the code and determine if the error code returns. Source of noise include battery chargers, inverters, DC:DC converters and power supplies for the 12v power source. Additionally, some Earth ground connections may also conduct significant electrical noise. If the error persists even when all devices generating noise are disconnected and turned off, the BMS should be tested by an authorized dealer or the factory to determine if the BMS unit is working properly.   <br />
+<br />
+</p>
+<table class="framenavi">
+<table border="0" cellspacing="10" cellpadding="5" width="100%">
+<colgroup><col width="1*"><col width="1*"></colgroup>
+<tr><td valign="center" align="left">&lt; <a href="page_trouble_codes.html">Appendix C: Diagnostic Trouble Code Definitions</a></td><td valign="center" align="right"><a href="code_internal_conversion_fault.html">Internal Conversion Fault (P0A00)</a> &gt;</table>
+</body>
+</html>
